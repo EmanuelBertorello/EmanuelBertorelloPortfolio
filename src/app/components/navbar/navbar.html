@@ -1,0 +1,20 @@
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">EB.</a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li><a href="#about" (click)="closeMenu()">Sobre mí</a></li>
+      <li><a href="#stack" (click)="closeMenu()">Stack</a></li>
+      <li><a href="#work" (click)="closeMenu()">Proyectos</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta btn btn-primary">Contactame</a>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Toggle menu">
+      <span [class.open]="menuOpen()"></span>
+      <span [class.open]="menuOpen()"></span>
+      <span [class.open]="menuOpen()"></span>
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,117 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background var(--duration-slow) var(--ease),
+              border-color var(--duration-slow) var(--ease),
+              padding var(--duration-slow) var(--ease);
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(8, 8, 8, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-color: var(--border);
+    padding: 14px 0;
+  }
+}
+
+.nav-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-right: auto;
+  transition: color var(--duration) var(--ease);
+
+  &:hover { color: var(--accent); }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  a {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: color var(--duration) var(--ease),
+                background var(--duration) var(--ease);
+
+    &:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
+.nav-cta {
+  font-size: 13px;
+  padding: 9px 18px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text-secondary);
+    border-radius: 99px;
+    transition: all var(--duration) var(--ease);
+
+    &.open:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    &.open:nth-child(2) { opacity: 0; }
+    &.open:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 65px;
+    background: rgba(8, 8, 8, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &.open {
+      display: flex;
+    }
+
+    a {
+      font-size: 20px;
+      padding: 16px 32px;
+    }
+  }
+
+  .nav-cta { display: none; }
+  .menu-toggle { display: flex; }
+}
