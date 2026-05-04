@@ -192,3 +192,178 @@
     &:hover { opacity: 0.8; }
   }
 }
+
+/* ── Wizard CSS Art ── */
+.wizard-art {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.wz-scene {
+  position: relative;
+  width: 110px;
+  height: 140px;
+}
+
+/* Floating stars */
+.wz-star {
+  position: absolute;
+  color: #fbbf24;
+  font-size: 9px;
+  line-height: 1;
+  z-index: 5;
+  animation: wz-float 2.8s ease-in-out infinite;
+
+  &.s1 { top: 18px; left: 2px;  animation-delay: 0s;   color: var(--accent); }
+  &.s2 { top: 38px; right: 4px; animation-delay: 1s;                         }
+  &.s3 { top: 8px;  right: 22px; animation-delay: 1.8s; font-size: 7px;      }
+}
+
+@keyframes wz-float {
+  0%, 100% { transform: translateY(0);    opacity: 0.55; }
+  50%       { transform: translateY(-6px); opacity: 1;   }
+}
+
+/* Hat star */
+.wz-hat-star {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #fbbf24;
+  line-height: 1;
+  z-index: 3;
+  animation: wz-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes wz-pulse {
+  0%, 100% { filter: drop-shadow(0 0 3px #fbbf2466); }
+  50%       { filter: drop-shadow(0 0 8px #fbbf24cc); }
+}
+
+/* Hat cone */
+.wz-hat {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(165deg, #8b5cf6 0%, #4c1d95 100%);
+  clip-path: polygon(50% 0%, 4% 100%, 96% 100%);
+  z-index: 2;
+}
+
+/* Hat brim */
+.wz-brim {
+  position: absolute;
+  top: 59px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 9px;
+  background: #4c1d95;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 3px 8px rgba(76, 29, 149, 0.5);
+}
+
+/* Head */
+.wz-head {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background: #2d1b69;
+  border-radius: 50%;
+  z-index: 4;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.25);
+}
+
+/* Eyes */
+.wz-eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #c4b5fd;
+  border-radius: 50%;
+  top: 13px;
+  box-shadow: 0 0 6px #a78bfa;
+
+  &.l { left: 6px;  }
+  &.r { right: 6px; }
+}
+
+/* Robe */
+.wz-body {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 44px;
+  background: linear-gradient(170deg, #5b21b6 0%, #3b1589 100%);
+  clip-path: polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%);
+  z-index: 3;
+}
+
+/* Magic wand */
+.wz-wand {
+  position: absolute;
+  top: 108px;
+  right: 6px;
+  width: 26px;
+  height: 3px;
+  background: linear-gradient(90deg, #4c1d95, #c4b5fd);
+  border-radius: 2px;
+  transform: rotate(-30deg);
+  transform-origin: right center;
+  z-index: 5;
+
+  &::after {
+    content: '✦';
+    position: absolute;
+    left: -10px;
+    top: -9px;
+    font-size: 9px;
+    color: var(--accent);
+    filter: drop-shadow(0 0 4px var(--accent));
+    animation: wz-float 1.6s ease-in-out infinite;
+  }
+}
+
+/* Crystal ball */
+.wz-ball {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle at 35% 32%, #93c5fd 0%, #2563eb 55%, #1e1b4b 100%);
+  border-radius: 50%;
+  z-index: 5;
+  animation: wz-glow 2s ease-in-out infinite;
+}
+
+@keyframes wz-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.45), 0 0 20px rgba(59, 130, 246, 0.15); }
+  50%       { box-shadow: 0 0 14px rgba(59, 130, 246, 0.7), 0 0 30px rgba(59, 130, 246, 0.3);  }
+}
+
+.wz-ball-shine {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 8px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
