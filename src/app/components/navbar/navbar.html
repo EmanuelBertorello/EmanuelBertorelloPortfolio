@@ -1,12 +1,12 @@
 <nav class="navbar" [class.scrolled]="isScrolled()">
   <div class="nav-container">
-    <a href="#hero" class="nav-logo">EB.</a>
+    <a href="#hero" class="nav-logo">Bertorello<span class="nav-logo-mark">/EB</span></a>
 
     <ul class="nav-links" [class.open]="menuOpen()">
-      <li><a href="#about" (click)="closeMenu()">Sobre mí</a></li>
-      <li><a href="#stack" (click)="closeMenu()">Stack</a></li>
-      <li><a href="#work" (click)="closeMenu()">Proyectos</a></li>
-      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+      <li><a href="#about" (click)="closeMenu()"><span class="nav-index">01</span> Sobre mí</a></li>
+      <li><a href="#stack" (click)="closeMenu()"><span class="nav-index">02</span> Stack</a></li>
+      <li><a href="#work" (click)="closeMenu()"><span class="nav-index">03</span> Proyectos</a></li>
+      <li><a href="#contact" (click)="closeMenu()"><span class="nav-index">04</span> Contacto</a></li>
     </ul>
 
     <a href="#contact" class="nav-cta btn btn-primary">Contactame</a>

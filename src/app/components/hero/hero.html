@@ -1,57 +1,61 @@
 <section class="hero" id="hero">
 
-  <!-- Starfield canvas -->
-  <canvas #starsCanvas class="hero-stars" aria-hidden="true"></canvas>
+  <div class="hero-rules" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
 
-  <!-- Glow central -->
-  <div class="hero-glow" aria-hidden="true"></div>
+  <span class="hero-spine" aria-hidden="true">DESARROLLADOR FRONT END — BUENOS AIRES, AR</span>
 
   <div class="container hero-container">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Disponible para proyectos freelance
+
+    <div class="hero-text">
+      <p class="hero-kicker">
+        <span class="hero-kicker-num">N.º 01</span>
+        Disponible para proyectos freelance
+      </p>
+
+      <h1 class="hero-headline">
+        Interfaces que<br>
+        <span class="accent">funcionan</span> de verdad.
+      </h1>
+
+      <p class="hero-sub">
+        Desarrollador Front End que construye productos digitales rápidos, accesibles
+        y cuidados al detalle — con React, Angular y TypeScript. Desde Buenos Aires,
+        trabajando con el mundo.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">
+          Ver proyectos
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contactame</a>
+      </div>
+
+      <div class="hero-meta">
+        <span class="meta-item">React &amp; Angular</span>
+        <span class="meta-item">TypeScript</span>
+        <span class="meta-item">Mobile First</span>
+      </div>
     </div>
 
-    <h1 class="hero-headline">
-      Construyendo interfaces<br>
-      de alto rendimiento,&nbsp;<span class="accent">píxel a píxel.</span>
-    </h1>
-
-    <p class="hero-sub">
-      Desarrollador Front End que crea productos digitales fluidos, accesibles
-      y visualmente precisos — con React, Angular y TypeScript.
-      Desde Buenos Aires, trabajando con el mundo.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#work" class="btn btn-primary">
-        Ver mis proyectos
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="#contact" class="btn btn-ghost">Contactame</a>
-    </div>
-
-    <div class="hero-meta">
-      <span class="meta-item">
-        <span class="meta-dot"></span>
-        React &amp; Angular
-      </span>
-      <span class="meta-divider"></span>
-      <span class="meta-item">
-        <span class="meta-dot"></span>
-        TypeScript
-      </span>
-      <span class="meta-divider"></span>
-      <span class="meta-item">
-        <span class="meta-dot"></span>
-        Mobile First
-      </span>
+    <div class="hero-specs">
+      <span class="hero-specs-mono">EB</span>
+      <ul class="hero-specs-list">
+        <li><span>Años activo</span><strong>03+</strong></li>
+        <li><span>Proyectos</span><strong>10+</strong></li>
+        <li><span>Stack core</span><strong>React / Angular</strong></li>
+        <li><span>Base</span><strong>Buenos Aires, AR</strong></li>
+      </ul>
+      <span class="hero-specs-tag">Disponible ahora →</span>
     </div>
   </div>
 
   <a href="#about" class="scroll-indicator" aria-label="Scrollear hacia abajo">
+    <span>Scroll</span>
     <div class="scroll-wheel"></div>
   </a>
 </section>

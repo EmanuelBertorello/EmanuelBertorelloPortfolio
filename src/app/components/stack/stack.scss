@@ -1,23 +1,26 @@
 .stack {
-  border-top: 1px solid var(--border);
+  border-top: var(--rule) solid var(--border);
 }
 
 .stack-heading {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-size: clamp(30px, 4.4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.06;
   margin-bottom: 56px;
 
-  .accent { color: var(--accent); }
+  .accent { color: var(--red); font-style: italic; }
 }
 
-/* ── Bento Grid ── */
+/* ── Grid: flat bordered spec-sheet, shared rules instead of gaps ── */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  gap: 12px;
+  gap: 0;
+  border-top: var(--rule) solid var(--border);
+  border-left: var(--rule) solid var(--border);
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -29,18 +32,14 @@
 
 .bento-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 22px;
-  transition: border-color var(--duration) var(--ease),
-              background var(--duration) var(--ease),
-              transform var(--duration) var(--ease);
+  border-right: var(--rule) solid var(--border);
+  border-bottom: var(--rule) solid var(--border);
+  padding: 24px;
+  transition: background var(--duration) var(--ease);
   cursor: default;
 
   &:hover {
-    border-color: var(--border-hover);
-    background: var(--bg-elevated);
-    transform: translateY(-2px);
+    background: var(--bg-muted);
   }
 }
 
@@ -91,7 +90,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-elevated) 100%);
 }
 
 .bento-tailwind {
@@ -113,7 +111,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  padding: 18px;
 }
 
 /* Content elements */
@@ -124,15 +121,15 @@
 }
 
 .bento-name {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .bento-name-sm {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
@@ -140,11 +137,10 @@
   font-size: 10px;
   font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  background: var(--accent-dim);
+  letter-spacing: 0.06em;
+  color: var(--bg-base);
+  background: var(--ink);
   padding: 2px 7px;
-  border-radius: 99px;
 }
 
 .bento-desc {
@@ -173,24 +169,12 @@
 
 .lang-badge {
   padding: 4px 10px;
-  border-radius: 6px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-mono);
+  color: var(--bg-base);
 
-  &.html {
-    background: rgba(228, 77, 38, 0.12);
-    color: #e44d26;
-    border: 1px solid rgba(228, 77, 38, 0.2);
-  }
-  &.css {
-    background: rgba(41, 101, 241, 0.12);
-    color: #2965f1;
-    border: 1px solid rgba(41, 101, 241, 0.2);
-  }
-  &.scss {
-    background: rgba(204, 102, 153, 0.12);
-    color: #cc6699;
-    border: 1px solid rgba(204, 102, 153, 0.2);
-  }
+  &.html { background: #e44d26; }
+  &.css  { background: #2965f1; }
+  &.scss { background: #cc6699; }
 }
